@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+     background-image: linear-gradient(to right,#000000,#2C3E50);
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      background-color: black;
+      margin-top: 15%;
+      margin-left: 30%;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px #cccccc;
+      max-width: 500px;
+      /* margin: auto; */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    input[type="text"], input[type="password"] {
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+     
+      color: white;
+      padding: 10px 30px;
+      margin-left: 190px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <form method="post" action="login.php">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+    
+        <input type="submit" value="Log In">
+    
+        <div id="error-message" class="error"></div>
+      </form>
+    
+      <script>
+        var form = document.querySelector('form');
+        var errorMessage = document.getElementById('error-message');
+    
+        form.addEventListener('submit', function(event) {
+          var username = document.getElementById('username').value;
+          var password = document.getElementById('password').value;
+    
+          if (!username || !password) {
+            event.preventDefault();
+            errorMessage.textContent = 'Please fill out both fields.';
+          }
+        });
+      </script>
+    
+</body>
+</html>
