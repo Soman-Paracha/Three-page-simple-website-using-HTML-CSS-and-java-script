@@ -1,1 +1,1 @@
-# Three-page-simple-website-using-HTML-CSS-and-java-script
+# Three-pages-simple-website-using-HTML-CSS-and-Java-script
